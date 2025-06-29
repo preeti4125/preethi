@@ -24,15 +24,17 @@ header {
   color: #fff;
   padding: 40px 20px;
   text-align: center;
-  animation: slideDown 1s ease-out;
+  animation: slideInTop 1s ease-out;
 }
 
 header h1 {
   font-size: 2.5em;
+  animation: fadeIn 2s ease-in;
 }
 
 nav {
   margin-top: 10px;
+  animation: fadeIn 2.5s ease-in;
 }
 
 nav a {
@@ -51,7 +53,6 @@ section {
   padding: 40px 20px;
   max-width: 1000px;
   margin: auto;
-  animation: fadeIn 1s ease-in;
 }
 
 h2 {
@@ -60,6 +61,7 @@ h2 {
   border-bottom: 3px solid #ff758c;
   display: inline-block;
   padding-bottom: 5px;
+  animation: slideInLeft 0.8s ease;
 }
 
 .card {
@@ -70,6 +72,7 @@ h2 {
   margin-bottom: 30px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   color: #222;
+  animation: slideInRight 1s ease;
 }
 
 .card:hover {
@@ -91,7 +94,7 @@ footer {
   color: #fff;
   text-align: center;
   padding: 20px;
-  animation: slideUp 1s ease-out;
+  animation: slideInBottom 1s ease-out;
 }
 
 a {
@@ -103,30 +106,42 @@ a {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@keyframes slideDown {
+@keyframes slideInTop {
   from { transform: translateY(-100%); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
 
-@keyframes slideUp {
+@keyframes slideInBottom {
   from { transform: translateY(100%); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
 }
 
   </style>
 </head>
 <body><header>
-  <h1><i class="fas fa-user"></i> Preethi Illatharasi S</h1>
+  <h1>Preethi Illatharasi S</h1>
   <p><i class="fas fa-map-marker-alt"></i> Kodaikanal, Tamil Nadu | <i class="fas fa-phone"></i> +91 7603970351 | <i class="fas fa-envelope"></i> preethiillatharasi@gmail.com</p>
   <nav>
-    <a href="https://www.linkedin.com/in/preethi-illatharasi-s-29a5a5297" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    <a href="https://preeti4125.github.io/preethi/" target="_blank"><i class="fas fa-globe"></i> Portfolio</a>
+    <a href="#profile"><i class="fas fa-id-badge"></i> Profile</a>
+    <a href="#projects"><i class="fas fa-laptop-code"></i> Projects</a>
+    <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
+    <a href="#contact"><i class="fas fa-address-card"></i> Contact</a>
   </nav>
-</header><section class="card">
+</header><section class="card" id="profile">
   <h2><i class="fas fa-user-graduate"></i> Profile Summary</h2>
   <p>Energetic and detail-oriented Computer Science undergraduate with hands-on experience in MERN stack development, responsive web design, and database systems. Passionate about building scalable applications and exploring emerging technologies like AI and IoT. Quick learner and adaptive problem solver.</p>
 </section><section class="card">
@@ -141,14 +156,14 @@ a {
     <li><strong>MERN Stack Developer Intern</strong> – Marcello Tech, Trichy</li>
     <li><strong>Web Design Intern</strong> – LiveWire, Trichy</li>
   </ul>
-</section><section class="card">
+</section><section class="card" id="projects">
   <h2><i class="fas fa-laptop-code"></i> Projects</h2>
   <ul>
     <li><strong>Personal Portfolio Website</strong> – HTML, CSS, JavaScript</li>
     <li><strong>Gym Membership Management System</strong> – Java</li>
     <li><strong>Online Course Registration System</strong> – MySQL, DBMS</li>
   </ul>
-</section><section class="card skills">
+</section><section class="card skills" id="skills">
   <h2><i class="fas fa-code"></i> Technical Skills</h2>
   <p><strong>Languages:</strong> Python, Java, C, C++</p>
   <p><strong>Web:</strong> HTML, CSS, JavaScript, React, Node.js</p>
@@ -171,6 +186,11 @@ a {
 </section><section class="card languages">
   <h2><i class="fas fa-language"></i> Languages Known</h2>
   <p>English, Tamil</p>
+</section><section class="card" id="contact">
+  <h2><i class="fas fa-address-card"></i> Contact Me</h2>
+  <p>Email: <a href="mailto:preethiillatharasi@gmail.com">preethiillatharasi@gmail.com</a></p>
+  <p>Phone: +91 7603970351</p>
+  <p>Location: Kodaikanal, Tamil Nadu</p>
 </section><footer>
   &copy; 2025 Preethi Illatharasi | Designed with ❤️ using HTML & CSS + Font Awesome
 </footer></body>
