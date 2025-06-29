@@ -4,24 +4,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Preethi Illatharasi - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(to right, #f4f6f9, #e1ecf4);
   color: #333;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 header {
-  background: #4b6cb7;
   background: linear-gradient(to right, #182848, #4b6cb7);
   color: #fff;
   padding: 40px 20px;
   text-align: center;
+  animation: slideDown 1s ease-out;
 }
 
 header h1 {
@@ -37,12 +40,18 @@ nav a {
   text-decoration: none;
   margin: 0 15px;
   font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffc107;
 }
 
 section {
   padding: 40px 20px;
   max-width: 1000px;
   margin: auto;
+  animation: fadeIn 1s ease-in;
 }
 
 h2 {
@@ -59,11 +68,12 @@ h2 {
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   padding: 30px;
   margin-bottom: 30px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
 }
 
 ul {
@@ -80,6 +90,7 @@ footer {
   color: #fff;
   text-align: center;
   padding: 20px;
+  animation: slideUp 1s ease-out;
 }
 
 a {
@@ -90,45 +101,60 @@ a {
   margin-bottom: 5px;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
   </style>
 </head>
 <body><header>
-  <h1>Preethi Illatharasi S</h1>
-  <p>Kodaikanal, Tamil Nadu | +91 7603970351 | preethiillatharasi@gmail.com</p>
+  <h1><i class="fas fa-user"></i> Preethi Illatharasi S</h1>
+  <p><i class="fas fa-map-marker-alt"></i> Kodaikanal, Tamil Nadu | <i class="fas fa-phone"></i> +91 7603970351 | <i class="fas fa-envelope"></i> preethiillatharasi@gmail.com</p>
   <nav>
-    <a href="https://www.linkedin.com/in/preethi-illatharasi-s-29a5a5297" target="_blank">LinkedIn</a>
-    <a href="https://preeti4125.github.io/preethi/" target="_blank">Portfolio</a>
+    <a href="https://www.linkedin.com/in/preethi-illatharasi-s-29a5a5297" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a href="https://preeti4125.github.io/preethi/" target="_blank"><i class="fas fa-globe"></i> Portfolio</a>
   </nav>
 </header><section class="card">
-  <h2>Profile Summary</h2>
+  <h2><i class="fas fa-user-graduate"></i> Profile Summary</h2>
   <p>Energetic and detail-oriented Computer Science undergraduate with hands-on experience in MERN stack development, responsive web design, and database systems. Passionate about building scalable applications and exploring emerging technologies like AI and IoT. Quick learner and adaptive problem solver.</p>
 </section><section class="card">
-  <h2>Education</h2>
+  <h2><i class="fas fa-university"></i> Education</h2>
   <ul>
-    <li><strong>B.E. Computer Science & Engineering</strong>, PSNA College, Dindigul (2023–2027) — CGPA: 7.77 (till 3rd semester)</li>
+    <li><strong>B.E. Computer Science & Engineering</strong>, PSNA College, Dindigul (2023–2027) — CGPA: 7.77</li>
     <li><strong>HSC</strong>, Zion Matriculation HSS, Kodaikanal (2021) — 81.33%</li>
   </ul>
 </section><section class="card">
-  <h2>Internships</h2>
+  <h2><i class="fas fa-briefcase"></i> Internships</h2>
   <ul>
     <li><strong>MERN Stack Developer Intern</strong> – Marcello Tech, Trichy</li>
     <li><strong>Web Design Intern</strong> – LiveWire, Trichy</li>
   </ul>
 </section><section class="card">
-  <h2>Projects</h2>
+  <h2><i class="fas fa-laptop-code"></i> Projects</h2>
   <ul>
     <li><strong>Personal Portfolio Website</strong> – HTML, CSS, JavaScript</li>
     <li><strong>Gym Membership Management System</strong> – Java</li>
     <li><strong>Online Course Registration System</strong> – MySQL, DBMS</li>
   </ul>
 </section><section class="card skills">
-  <h2>Technical Skills</h2>
+  <h2><i class="fas fa-code"></i> Technical Skills</h2>
   <p><strong>Languages:</strong> Python, Java, C, C++</p>
   <p><strong>Web:</strong> HTML, CSS, JavaScript, React, Node.js</p>
   <p><strong>Databases:</strong> MongoDB, MySQL</p>
   <p><strong>Tools:</strong> Git, VS Code, Postman, Blender</p>
 </section><section class="card">
-  <h2>Certifications</h2>
+  <h2><i class="fas fa-certificate"></i> Certifications</h2>
   <ul>
     <li>Python & Java Basics – IBM Digilabs</li>
     <li>Python – HackerRank</li>
@@ -139,12 +165,12 @@ a {
     <li>English C1 – EFSET</li>
   </ul>
 </section><section class="card">
-  <h2>Soft Skills</h2>
+  <h2><i class="fas fa-comments"></i> Soft Skills</h2>
   <p>Teamwork, Communication, Time Management, Creativity, Adaptability</p>
 </section><section class="card languages">
-  <h2>Languages Known</h2>
+  <h2><i class="fas fa-language"></i> Languages Known</h2>
   <p>English, Tamil</p>
 </section><footer>
-  &copy; 2025 Preethi Illatharasi | Designed with ❤️ using HTML & CSS
+  &copy; 2025 Preethi Illatharasi | Designed with ❤️ using HTML & CSS + Font Awesome
 </footer></body>
 </html>
