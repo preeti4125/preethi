@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Preethi Illatharasi - Portfolio</title>
+  <title>Preethi Illatharasi portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
@@ -16,7 +16,6 @@
       --light: #f4f3f9;
       --dark: #1f1f2e;
       --text-light: #eee;
-      --glass: rgba(255, 255, 255, 0.1);
     }
 
     * {
@@ -31,6 +30,11 @@
       background: linear-gradient(to right, #f6f5fb, #ebeaf2);
       color: #333;
       transition: 0.4s ease-in-out;
+    }
+
+    body.dark {
+      background: #1f1f2e;
+      color: #eee;
     }
 
     header {
@@ -90,6 +94,10 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
     }
 
+    body.dark .card {
+      background: rgba(255,255,255,0.05);
+    }
+
     h2 {
       color: var(--primary);
       margin-bottom: 15px;
@@ -97,6 +105,11 @@
       border-bottom: 2px solid var(--primary);
       padding-bottom: 5px;
       display: inline-block;
+    }
+
+    h3 {
+      margin-top: 20px;
+      color: var(--accent);
     }
 
     ul {
@@ -139,9 +152,7 @@
 <body>
   <header>
     <h1>Preethi Illatharasi S</h1>
-    <p>Hi,I am Computer Science Engineering student who approaches every challenge with clarity, creativity, and purpose.
-This portfolio is more than a collection of projects — it’s a reflection of my journey, my mindset, and the impact I aim to create through technology.
-Take a look around — explore my work, my vision, and the passion I bring to everything I do.</p>
+    <p>Computer Science Engineer | Web Developer | Tech Enthusiast</p>
     <nav>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
@@ -153,11 +164,19 @@ Take a look around — explore my work, my vision, and the passion I bring to ev
   </header>
 
   <section class="card" id="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>I’ve always been drawn to how technology can shape the world — and I’m determined to be a part of that transformation.
-Throughout my academic path, I’ve consistently embraced both logic and creativity, using every opportunity to build skills that matter. I value precision, I welcome challenges, and I don’t settle until the job is done right.
-Outside the classroom, I actively engage in projects, initiatives, and experiences that push me to grow — not just as an engineer, but as a thinker and a collaborator.</p>
-      </section>
+    <h2>About me</h2>
+    <p>I’ve always been drawn to how technology can shape the world and I’m determined to be a part of that transformation. Throughout my academic path, I’ve consistently embraced both logic and creativity, using every opportunity to build skills that matter. I value precision, I welcome challenges, and I don’t settle until the job is done right.</p>
+    <p>Outside the classroom, I actively engage in projects, initiatives, and experiences that push me to grow not just as an engineer, but as a thinker and a collaborator.</p>
+
+    <h3>Always Evolving</h3>
+    <p>For me, learning doesn’t stop at lectures or textbooks. I’m constantly exploring new tools, emerging trends, and modern practices that keep my work relevant and forward-focused. Whether it's a new programming language, a UI/UX principle, or a breakthrough concept in AI — I’m always looking ahead and staying ahead.</p>
+
+    <h3>Collaboration That Builds More Than Code</h3>
+    <p>Every great product starts with clear communication and shared understanding. I bring a calm, solution-oriented approach to team projects — where every voice matters and every detail counts. I value feedback, adapt with ease, and contribute with both intention and impact. My focus is always on building something meaningful — together.</p>
+
+    <h3>Results That Reflect Purpose</h3>
+    <p>I believe that great work speaks for itself — not just in what it does, but in how it makes people feel. With a solid academic foundation, practical experience, and a vision rooted in progress, I’m ready to take on challenges that require both insight and initiative. I don’t just aim to meet expectations — I aim to redefine them.</p>
+  </section>
 
   <section class="card" id="skills" data-aos="fade-up">
     <h2>My Skills</h2>
@@ -187,24 +206,19 @@ Outside the classroom, I actively engage in projects, initiatives, and experienc
       <li>Java, PHP, Blender, MySQL – IIT Bombay</li>
       <li>Gen AI – Great Learning</li>
       <li>Networking, IoT – Cisco</li>
-      <li>English C1 – EFSET</li>
+      <li>English C1 Advanced– EFSET</li>
     </ul>
-  </section>
-
-  <section class="card" data-aos="fade-up">
-    <h2>Club Activities – Techsphera</h2>
-    <p>Working alongside like-minded peers, I contributed to brainstorming sessions, design discussions, and the implementation of innovative tech solutions. These experiences honed my teamwork and problem-solving skills.</p>
   </section>
 
   <section class="card" id="contact" data-aos="fade-up">
     <h2>Contact Me</h2>
     <p>Email: <a href="mailto:preethiillatharasi@gmail.com">preethiillatharasi@gmail.com</a></p>
     <p>Phone: +91 7603970351</p>
-    <a href="Preethi_Resume.pdf" class="resume-btn" download><i class="fas fa-download"></i> Download Resume</a>
+    <a href="https://drive.google.com/file/d/1XcmzSV2xknG3YonbCBp6yJ6jT-gdldz3/view?usp=drivesdk" class="resume-btn" download><i class="fas fa-download"></i> Download Resume</a>
   </section>
 
   <footer>
-    &copy; 2025 Preethi Illatharasi S — Crafted with Royal Purple
+    &copy; 2025 Preethi Illatharasi S
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
