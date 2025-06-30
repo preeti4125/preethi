@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Preethi Illatharasi - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preethi Illatharasi - Advanced Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <style>
     :root {
-      --primary: #5e4b8b; /* Soft royal purple */
+      --primary: #5e4b8b;
       --accent: #3e3266;
-      --light-bg: #f5f5fa;
-      --dark-bg: #1e1e2f;
-      --glass-light: rgba(255, 255, 255, 0.85);
-      --glass-dark: rgba(255, 255, 255, 0.05);
+      --light: #f4f3f9;
+      --dark: #1f1f2e;
+      --text-light: #eee;
+      --glass: rgba(255, 255, 255, 0.1);
     }
 
     * {
@@ -23,91 +27,80 @@
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--light-bg);
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(to right, #f6f5fb, #ebeaf2);
       color: #333;
-      transition: background 0.4s, color 0.4s;
-    }
-
-    body.dark {
-      background: var(--dark-bg);
-      color: #eee;
+      transition: 0.4s ease-in-out;
     }
 
     header {
-      background: linear-gradient(to right, var(--accent), var(--primary));
+      background: linear-gradient(120deg, var(--accent), var(--primary));
       color: white;
-      padding: 60px 20px;
+      padding: 80px 20px;
       text-align: center;
+      position: relative;
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
+      font-weight: 700;
     }
 
     nav {
-      margin-top: 15px;
+      margin-top: 20px;
     }
 
     nav a {
-      margin: 0 12px;
+      margin: 0 14px;
       color: white;
-      text-decoration: none;
       font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ddd;
     }
 
     .toggle-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
       background: white;
       color: var(--primary);
-      padding: 8px 16px;
       border: none;
-      border-radius: 20px;
-      margin-top: 15px;
-      cursor: pointer;
+      padding: 10px 16px;
+      border-radius: 30px;
       font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     section {
       max-width: 1000px;
-      margin: 40px auto;
+      margin: 50px auto;
       padding: 20px;
-      animation: fadeIn 0.6s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
     }
 
     h2 {
       color: var(--primary);
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
       border-bottom: 2px solid var(--primary);
-      display: inline-block;
       padding-bottom: 5px;
-    }
-
-    .card {
-      background: var(--glass-light);
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-      backdrop-filter: blur(8px);
-      padding: 30px;
-      margin-bottom: 30px;
-      transition: transform 0.3s ease, background 0.4s ease;
-    }
-
-    body.dark .card {
-      background: var(--glass-dark);
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
+      display: inline-block;
     }
 
     ul {
-      list-style: none;
-      padding-left: 0;
+      padding-left: 20px;
     }
 
     li {
@@ -115,15 +108,15 @@
     }
 
     .resume-btn {
-      margin-top: 20px;
-      display: inline-block;
-      padding: 12px 24px;
       background: var(--primary);
       color: white;
+      padding: 12px 28px;
       text-decoration: none;
       border-radius: 30px;
+      display: inline-block;
+      margin-top: 20px;
       font-weight: 600;
-      transition: background 0.3s ease;
+      transition: 0.3s;
     }
 
     .resume-btn:hover {
@@ -131,109 +124,90 @@
     }
 
     footer {
+      text-align: center;
       background: var(--accent);
       color: white;
-      text-align: center;
       padding: 20px;
     }
 
-    @media (max-width: 600px) {
-      header h1 { font-size: 1.8rem; }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
       nav a { display: block; margin: 8px 0; }
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Preethi Illatharasi S</h1>
+    <p>Computer Science Engineer | Web Developer | Tech Enthusiast</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certs">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="toggle-btn" onclick="document.body.classList.toggle('dark')">🌙 Toggle Mode</button>
+  </header>
 
-<header>
-  <h1>Preethi Illatharasi S</h1>
-  <p>Kodaikanal, Tamil Nadu | +91 7603970351 | preethiillatharasi@gmail.com</p>
-  <nav>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#certs">Certificates</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <button class="toggle-btn" onclick="toggleMode()">🌙 Toggle Mode</button>
-</header>
+  <section class="card" id="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>I am a driven Computer Science engineer with a passion for innovation and problem-solving. Throughout my academic journey, I have consistently excelled in both theoretical studies and practical applications. I actively engage in extracurricular activities that enrich my skills and broaden my perspective.</p>
+    <p>I am fuelled by a deep curiosity for emerging technologies. My commitment to continuous learning keeps me updated with industry trends and equips me with the right tools for success.</p>
+    <p>I believe in open communication and collaboration. I actively seek feedback to ensure the final product aligns with client goals. I’m committed to delivering impactful results and strive for excellence in every project I take on.</p>
+  </section>
 
-<section class="card">
-  <h2>Profile Summary</h2>
-  <p>Energetic and detail-oriented Computer Science undergraduate with hands-on experience in MERN stack development, responsive web design, and database systems. Passionate about building scalable applications and exploring emerging technologies like AI and IoT. Quick learner and adaptive problem solver.</p>
-</section>
+  <section class="card" id="skills" data-aos="fade-up">
+    <h2>My Skills</h2>
+    <ul>
+      <li><strong>User Interface Design:</strong> Creating intuitive and accessible interfaces.</li>
+      <li><strong>Web Development:</strong> HTML, CSS, JavaScript, React.</li>
+      <li><strong>Cybersecurity:</strong> Risk assessment, securing applications.</li>
+      <li><strong>Project Management:</strong> Organizing timelines, leading team efforts.</li>
+    </ul>
+  </section>
 
-<section class="card">
-  <h2>Education</h2>
-  <ul>
-    <li><strong>B.E. Computer Science & Engineering</strong>, PSNA College, Dindigul (2023–2027) — CGPA: 7.77(till 3rd semester)</li>
-    <li><strong>HSC</strong>, Zion Matriculation HSS, Kodaikanal (2021) — 81.33%</li>
-  </ul>
-</section>
+  <section class="card" id="projects" data-aos="fade-up">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Portfolio Website</strong> – A responsive portfolio using HTML, CSS, JS</li>
+      <li><strong>Gym Membership System</strong> – Developed using Java</li>
+      <li><strong>Online Course Registration</strong> – Created using DBMS & MySQL</li>
+    </ul>
+  </section>
 
-<section class="card">
-  <h2>Internships</h2>
-  <ul>
-    <li><strong>MERN Stack Developer Intern</strong> – Marcello Tech, Trichy</li>
-    <li><strong>Web Design Intern</strong> – LiveWire, Trichy</li>
-  </ul>
-</section>
+  <section class="card" id="certs" data-aos="fade-up">
+    <h2>Certifications</h2>
+    <ul>
+      <li>Python & Java Basics – IBM Digilabs</li>
+      <li>Python – HackerRank</li>
+      <li>DBMS – NPTEL</li>
+      <li>Java, PHP, Blender, MySQL – IIT Bombay</li>
+      <li>Gen AI – Great Learning</li>
+      <li>Networking, IoT – Cisco</li>
+      <li>English C1 – EFSET</li>
+    </ul>
+  </section>
 
-<section class="card" id="projects">
-  <h2>Projects</h2>
-  <ul>
-    <li><strong>Portfolio Website</strong> – HTML, CSS, JavaScript</li>
-    <li><strong>Gym Membership System</strong> – Java</li>
-    <li><strong>Online Course Registration</strong> – MySQL, DBMS</li>
-  </ul>
-</section>
+  <section class="card" data-aos="fade-up">
+    <h2>Club Activities – Techsphera</h2>
+    <p>Working alongside like-minded peers, I contributed to brainstorming sessions, design discussions, and the implementation of innovative tech solutions. These experiences honed my teamwork and problem-solving skills.</p>
+  </section>
 
-<section class="card" id="skills">
-  <h2>Technical Skills</h2>
-  <p><strong>Languages:</strong> Python, Java, C, C++</p>
-  <p><strong>Web:</strong> HTML, CSS, JavaScript, React, Node.js</p>
-  <p><strong>Databases:</strong> MongoDB, MySQL</p>
-  <p><strong>Tools:</strong> Git, VS Code, Postman, Blender</p>
-</section>
+  <section class="card" id="contact" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:preethiillatharasi@gmail.com">preethiillatharasi@gmail.com</a></p>
+    <p>Phone: +91 7603970351</p>
+    <a href="Preethi_Resume.pdf" class="resume-btn" download><i class="fas fa-download"></i> Download Resume</a>
+  </section>
 
-<section class="card" id="certs">
-  <h2>Certifications</h2>
-  <ul>
-    <li>Python & Java Basics – IBM Digilabs</li>
-    <li>Python – HackerRank</li>
-    <li>DBMS – NPTEL</li>
-    <li>Java, PHP, Blender, MySQL – IIT Bombay</li>
-    <li>Gen AI – Great Learning</li>
-    <li>Networking, IoT – Cisco</li>
-    <li>English C1 – EFSET</li>
-  </ul>
-</section>
+  <footer>
+    &copy; 2025 Preethi Illatharasi S — Crafted with Royal Purple
+  </footer>
 
-<section class="card">
-  <h2>Soft Skills</h2>
-  <p>Teamwork, Communication, Time Management, Creativity, Adaptability</p>
-</section>
-
-<section class="card">
-  <h2>Languages Known</h2>
-  <p>English, Tamil</p>
-</section>
-
-<section class="card" id="contact">
-  <h2>Contact Me</h2>
-  <p>Email: <a href="mailto:preethiillatharasi@gmail.com">preethiillatharasi@gmail.com</a></p>
-  <p>Phone: +91 7603970351</p>
-  <a class="resume-btn" href="https://drive.google.com/file/d/1XcmzSV2xknG3YonbCBp6yJ6jT-gdldz3/view?usp=drivesdk" download>Download Resume</a>
-</section>
-
-<footer>
-  &copy; 2025 Preethi Illatharasi S
-</footer>
-
-<script>
-  function toggleMode() {
-    document.body.classList.toggle("dark");
-  }
-</script>
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800 });
+  </script>
 </body>
 </html>
