@@ -2,32 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Preethi Illatharasi - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --purple: #6a0dad;
+      --dark-bg: #1a1a2e;
+      --light-bg: #f3f3f7;
+      --glass: rgba(255, 255, 255, 0.1);
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #f4f6f9, #e1ecf4);
-      color: #333;
+      background: var(--light-bg);
+      color: #222;
       transition: background 0.4s, color 0.4s;
     }
 
-    body.dark-mode {
-      background: linear-gradient(to right, #0f0f0f, #1a1a2e);
-      color: #f0f0f0;
+    body.dark {
+      background: var(--dark-bg);
+      color: #eee;
     }
 
     header {
-      background: linear-gradient(to right, #182848, #4b6cb7);
-      color: #fff;
-      padding: 50px 20px;
+      background: linear-gradient(to right, #320d6d, var(--purple));
+      color: white;
+      padding: 60px 20px;
       text-align: center;
       position: sticky;
       top: 0;
@@ -35,64 +43,63 @@
     }
 
     header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
+      font-size: 2.5rem;
     }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ffd700;
-    }
-
-    .toggle-btn {
-      background: #fff;
-      color: #4b6cb7;
-      border: none;
-      padding: 8px 15px;
-      font-weight: bold;
-      border-radius: 8px;
-      cursor: pointer;
+    nav {
       margin-top: 15px;
     }
 
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-      animation: fadeInUp 1s ease;
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
     }
 
-    @keyframes fadeInUp {
-      0% {opacity: 0; transform: translateY(30px);}
-      100% {opacity: 1; transform: translateY(0);}
+    .toggle-btn {
+      background: white;
+      color: var(--purple);
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      margin-top: 15px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h2 {
-      color: #182848;
+      color: var(--purple);
       margin-bottom: 20px;
-      border-bottom: 2px solid #4b6cb7;
+      border-bottom: 2px solid var(--purple);
       display: inline-block;
       padding-bottom: 5px;
     }
 
     .card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
       padding: 30px;
       margin-bottom: 30px;
       transition: transform 0.3s ease;
     }
 
-    body.dark-mode .card {
-      background: #2d2d2d;
+    body.dark .card {
+      background: rgba(255, 255, 255, 0.05);
     }
 
     .card:hover {
@@ -108,42 +115,32 @@
       margin-bottom: 10px;
     }
 
-    .skills p, .languages p {
-      margin-bottom: 5px;
-    }
-
     .resume-btn {
-      margin-top: 15px;
+      margin-top: 20px;
       display: inline-block;
-      padding: 10px 20px;
-      background: #4b6cb7;
+      padding: 12px 24px;
+      background: var(--purple);
       color: white;
-      border-radius: 8px;
       text-decoration: none;
-      font-weight: 500;
-      transition: background 0.3s;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: background 0.3s ease;
     }
 
     .resume-btn:hover {
-      background: #182848;
+      background: #4b1b9d;
     }
 
     footer {
-      background: #182848;
-      color: #fff;
+      background: #320d6d;
+      color: white;
       text-align: center;
       padding: 20px;
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8em;
-      }
-
-      nav a {
-        display: block;
-        margin: 8px 0;
-      }
+      header h1 { font-size: 1.8rem; }
+      nav a { display: block; margin: 8px 0; }
     }
   </style>
 </head>
@@ -153,12 +150,12 @@
   <h1>Preethi Illatharasi S</h1>
   <p>Kodaikanal, Tamil Nadu | +91 7603970351 | preethiillatharasi@gmail.com</p>
   <nav>
-    <a href="https://www.linkedin.com/in/preethi-illatharasi-s-29a5a5297" target="_blank">LinkedIn</a>
-    <a href="https://preeti4125.github.io/preethi/" target="_blank">Portfolio</a>
     <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#certs">Certificates</a>
     <a href="#contact">Contact</a>
   </nav>
-  <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+  <button class="toggle-btn" onclick="toggleMode()">🌙 Toggle Mode</button>
 </header>
 
 <section class="card">
@@ -169,8 +166,8 @@
 <section class="card">
   <h2>Education</h2>
   <ul>
-    <li><strong>B.E. Computer Science & Engineering</strong>, PSNA College, Dindigul (2023–2027) — CGPA: 7.77</li>
-    <li><strong>HSC</strong>, Zion Matriculation HSS, Kodaikanal (2021) — 81.33%</li>
+    <li><strong>B.E. Computer Science & Engineering</strong>, PSNA College (2023–2027) — CGPA: 7.77(till 3rd semester)</li>
+    <li><strong>HSC</strong>, Zion Matriculation HSS (2021) — 81.33%</li>
   </ul>
 </section>
 
@@ -185,13 +182,13 @@
 <section class="card" id="projects">
   <h2>Projects</h2>
   <ul>
-    <li><strong>Personal Portfolio Website</strong> – HTML, CSS, JavaScript</li>
-    <li><strong>Gym Membership Management System</strong> – Java</li>
-    <li><strong>Online Course Registration System</strong> – MySQL, DBMS</li>
+    <li><strong>Portfolio Website</strong> – HTML, CSS, JavaScript</li>
+    <li><strong>Gym Membership System</strong> – Java</li>
+    <li><strong>Online Course Registration</strong> – MySQL, DBMS</li>
   </ul>
 </section>
 
-<section class="card skills">
+<section class="card" id="skills">
   <h2>Technical Skills</h2>
   <p><strong>Languages:</strong> Python, Java, C, C++</p>
   <p><strong>Web:</strong> HTML, CSS, JavaScript, React, Node.js</p>
@@ -199,7 +196,7 @@
   <p><strong>Tools:</strong> Git, VS Code, Postman, Blender</p>
 </section>
 
-<section class="card">
+<section class="card" id="certs">
   <h2>Certifications</h2>
   <ul>
     <li>Python & Java Basics – IBM Digilabs</li>
@@ -217,7 +214,7 @@
   <p>Teamwork, Communication, Time Management, Creativity, Adaptability</p>
 </section>
 
-<section class="card languages">
+<section class="card">
   <h2>Languages Known</h2>
   <p>English, Tamil</p>
 </section>
@@ -230,12 +227,12 @@
 </section>
 
 <footer>
-  &copy; 2025 Preethi Illatharasi | Designed with ❤️ using HTML, CSS & JavaScript
+  &copy; 2025 Preethi Illatharasi S — Designed with ❤️ in Royal Purple
 </footer>
 
 <script>
-  function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
+  function toggleMode() {
+    document.body.classList.toggle("dark");
   }
 </script>
 
