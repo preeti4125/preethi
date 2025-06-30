@@ -7,10 +7,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --purple: #6a0dad;
-      --dark-bg: #1a1a2e;
-      --light-bg: #f3f3f7;
-      --glass: rgba(255, 255, 255, 0.1);
+      --primary: #5e4b8b; /* Soft royal purple */
+      --accent: #3e3266;
+      --light-bg: #f5f5fa;
+      --dark-bg: #1e1e2f;
+      --glass-light: rgba(255, 255, 255, 0.85);
+      --glass-dark: rgba(255, 255, 255, 0.05);
     }
 
     * {
@@ -23,7 +25,7 @@
     body {
       font-family: 'Poppins', sans-serif;
       background: var(--light-bg);
-      color: #222;
+      color: #333;
       transition: background 0.4s, color 0.4s;
     }
 
@@ -33,13 +35,10 @@
     }
 
     header {
-      background: linear-gradient(to right, #320d6d, var(--purple));
+      background: linear-gradient(to right, var(--accent), var(--primary));
       color: white;
       padding: 60px 20px;
       text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
 
     header h1 {
@@ -51,7 +50,7 @@
     }
 
     nav a {
-      margin: 0 10px;
+      margin: 0 12px;
       color: white;
       text-decoration: none;
       font-weight: 600;
@@ -59,7 +58,7 @@
 
     .toggle-btn {
       background: white;
-      color: var(--purple);
+      color: var(--primary);
       padding: 8px 16px;
       border: none;
       border-radius: 20px;
@@ -72,7 +71,7 @@
       max-width: 1000px;
       margin: 40px auto;
       padding: 20px;
-      animation: fadeIn 1s ease;
+      animation: fadeIn 0.6s ease;
     }
 
     @keyframes fadeIn {
@@ -81,29 +80,29 @@
     }
 
     h2 {
-      color: var(--purple);
+      color: var(--primary);
       margin-bottom: 20px;
-      border-bottom: 2px solid var(--purple);
+      border-bottom: 2px solid var(--primary);
       display: inline-block;
       padding-bottom: 5px;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.8);
+      background: var(--glass-light);
       border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(10px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(8px);
       padding: 30px;
       margin-bottom: 30px;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, background 0.4s ease;
     }
 
     body.dark .card {
-      background: rgba(255, 255, 255, 0.05);
+      background: var(--glass-dark);
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
     }
 
     ul {
@@ -119,7 +118,7 @@
       margin-top: 20px;
       display: inline-block;
       padding: 12px 24px;
-      background: var(--purple);
+      background: var(--primary);
       color: white;
       text-decoration: none;
       border-radius: 30px;
@@ -128,11 +127,11 @@
     }
 
     .resume-btn:hover {
-      background: #4b1b9d;
+      background: var(--accent);
     }
 
     footer {
-      background: #320d6d;
+      background: var(--accent);
       color: white;
       text-align: center;
       padding: 20px;
@@ -166,8 +165,8 @@
 <section class="card">
   <h2>Education</h2>
   <ul>
-    <li><strong>B.E. Computer Science & Engineering</strong>, PSNA College (2023–2027) — CGPA: 7.77(till 3rd semester)</li>
-    <li><strong>HSC</strong>, Zion Matriculation HSS (2021) — 81.33%</li>
+    <li><strong>B.E. Computer Science & Engineering</strong>, PSNA College, Dindigul (2023–2027) — CGPA: 7.77(till 3rd semester)</li>
+    <li><strong>HSC</strong>, Zion Matriculation HSS, Kodaikanal (2021) — 81.33%</li>
   </ul>
 </section>
 
@@ -227,7 +226,7 @@
 </section>
 
 <footer>
-  &copy; 2025 Preethi Illatharasi S — Designed with ❤️ in Royal Purple
+  &copy; 2025 Preethi Illatharasi S — Crafted in Royal Purple
 </footer>
 
 <script>
