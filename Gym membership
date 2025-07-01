@@ -1,0 +1,92 @@
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.awt.event.*;
+import java.util.Vector;
+
+public class GymMembershipGUI extends JFrame {
+    private JTextField idField, nameField, ageField, typeField;
+    private DefaultTableModel tableModel;
+
+    public GymMembershipGUI() {
+        setTitle("Gym Membership System");
+        setSize(600, 400);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLayout(null);
+
+        JLabel idLabel = new JLabel("ID:");
+        JLabel nameLabel = new JLabel("Name:");
+        JLabel ageLabel = new JLabel("Age:");
+        JLabel typeLabel = new JLabel("Membership Type:");
+
+        idLabel.setBounds(20, 20, 100, 25);
+        nameLabel.setBounds(20, 60, 100, 25);
+        ageLabel.setBounds(20, 100, 100, 25);
+        typeLabel.setBounds(20, 140, 120, 25);
+
+        idField = new JTextField();
+        nameField = new JTextField();
+        ageField = new JTextField();
+        typeField = new JTextField();
+
+        idField.setBounds(150, 20, 150, 25);
+        nameField.setBounds(150, 60, 150, 25);
+        ageField.setBounds(150, 100, 150, 25);
+        typeField.setBounds(150, 140, 150, 25);
+
+        JButton addButton = new JButton("Add Member");
+        JButton clearButton = new JButton("Clear Fields");
+
+        addButton.setBounds(320, 20, 150, 30);
+        clearButton.setBounds(320, 60, 150, 30);
+
+        tableModel = new DefaultTableModel(new String[]{"ID", "Name", "Age", "Type"}, 0);
+        JTable table = new JTable(tableModel);
+        JScrollPane scrollPane = new JScrollPane(table);
+
+        scrollPane.setBounds(20, 200, 540, 150);
+
+        add(idLabel);
+        add(nameLabel);
+        add(ageLabel);
+        add(typeLabel);
+        add(idField);
+        add(nameField);
+        add(ageField);
+        add(typeField);
+        add(addButton);
+        add(clearButton);
+        add(scrollPane);
+
+        addButton.addActionListener(e -> {
+            String id = idField.getText();
+            String name = nameField.getText();
+            String age = ageField.getText();
+            String type = typeField.getText();
+
+            if (id.isEmpty() || name.isEmpty() || age.isEmpty() || type.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Please fill all fields");
+            } else {
+                Vector<String> row = new Vector<>();
+                row.add(id);
+                row.add(name);
+                row.add(age);
+                row.add(type);
+                tableModel.addRow(row);
+                JOptionPane.showMessageDialog(this, "Member added successfully!");
+            }
+        });
+
+        clearButton.addActionListener(e -> {
+            idField.setText("");
+            nameField.setText("");
+            ageField.setText("");
+            typeField.setText("");
+        });
+
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new GymMembershipGUI();
+    }
+}
